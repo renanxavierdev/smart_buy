@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:cardElevation="5dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageViewThumbnail"
+                android:background="#f2f2f2"
+                android:layout_width="110dp"
+                android:layout_height="120dp" />
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/layoutParent1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:maxLines="1"
+                        android:id="@+id/textViewTitle"
+                        android:layout_marginTop="13dp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:text="TITULO"
+                        android:textSize="7pt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:id="@+id/textViewDescription"
+                    android:layout_marginRight="16dp"
+                    android:text="Breve descriçao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:maxLines="1"
+                    android:id="@+id/textViewValue"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#000"
+                    android:text="R$ 0,00"
+                    android:textSize="6pt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <RelativeLayout
+                    android:gravity="bottom"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textViewQtd"
+                        android:text="0"
+                        android:textColor="#9E1BB6"
+                        android:layout_marginTop="7dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                    <ImageView
+                        android:visibility="visible"
+                        android:id="@+id/imageViewNegative"
+                        android:layout_marginBottom="0dp"
+                        android:background="@drawable/ic_remove_100"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+
+                    <ImageView
+                        android:visibility="visible"
+                        android:id="@+id/imageViewFavorite"
+                        android:layout_marginBottom="0dp"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/ic_add_100"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</FrameLayout>

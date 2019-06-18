@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_dialog"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@drawable/shape_custom_dialog_default"
+        android:gravity="center_horizontal"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/dialog_product_image"
+            android:layout_width="280dp"
+            android:layout_height="200dp" />
+
+
+
+            <RelativeLayout
+                android:background="#19000000"
+                android:gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_width="280dp"
+                android:layout_height="44dp">
+
+                <TextView
+                    android:id="@+id/textViewQtd"
+                    android:text="1"
+                    android:textColor="#9E1BB6"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <ImageView
+
+                    android:layout_marginLeft="24dp"
+                    android:visibility="visible"
+                    android:id="@+id/imageViewNegative"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/ic_remove_100"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+
+                <ImageView
+                    android:visibility="visible"
+                    android:id="@+id/imageViewPositive"
+                    android:layout_marginBottom="0dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="24dp"
+                    android:background="@drawable/ic_add_100"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+
+
+            </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/dialog_product_title"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textSize="9pt"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="NOME PRODUTO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/dialog_product_value"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="R$ 0,00"
+            android:textSize="8pt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/dialog_product_button_cart_add"
+            android:elevation="6dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/shape_button_gradient_default"
+            android:text="ADICIONAR"
+            android:textColor="#FFF"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>
