@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/dialog_product_image"
             android:layout_width="280dp"
-            android:layout_height="200dp" />
+            android:layout_height="280dp" />
 
 
 

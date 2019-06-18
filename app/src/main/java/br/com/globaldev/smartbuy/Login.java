@@ -33,6 +33,13 @@ public class Login extends AppCompatActivity {
                 }
             }
         });
+
+        findViewById(R.id.buttonLoginGoogle).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Login.this, MainActivity.class));
+            }
+        });
     }
 
 

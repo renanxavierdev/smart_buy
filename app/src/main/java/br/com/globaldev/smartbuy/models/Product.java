@@ -2,8 +2,8 @@ package br.com.globaldev.smartbuy.models;
 
 public class Product {
 
-    private String name, description;
-    private int img, qtd, id;
+    private String name, description, id;
+    private int img, qtd;
     private double price;
 
     public String getName() {
@@ -38,11 +38,11 @@ public class Product {
         this.qtd = qtd;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -10,6 +10,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,20 +48,41 @@ public class Qr extends AppCompatActivity {
 
 
         Product p1 = new Product();
-        p1.setName("Acucar");
-        p1.setDescription("");
-        p1.setImg(R.drawable.default_qrcode);
+        p1.setName("Pasta de dente");
+        p1.setDescription("Pasta colgate");
+        p1.setImg(R.drawable.creme_dental);
         p1.setQtd(1);
-        p1.setPrice(50.2);
-        p1.setId(1);
+        p1.setPrice(2.50);
+        p1.setId("7891024134702");
 
         mProducts.add(p1);
+
+        Product p2 = new Product();
+        p2.setName("Sabonete natura");
+        p2.setDescription("Sabonete natura todo dia");
+        p2.setImg(R.drawable.sabonete);
+        p2.setQtd(1);
+        p2.setPrice(12.75);
+        p2.setId("7899846028766");
+
+        mProducts.add(p2);
+
+        Product p3 = new Product();
+        p3.setName("Caixa de contonete");
+        p3.setDescription("200 unidades");
+        p3.setImg(R.drawable.cotonete);
+        p3.setQtd(1);
+        p3.setPrice(6.45);
+        p3.setId("7898095296018");
+
+        mProducts.add(p3);
 
         findViewById(R.id.imageViewQr).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 IntentIntegrator intentIntegrator = new IntentIntegrator(Qr.this);
-                intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                //intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
                 intentIntegrator.setPrompt("Passe o scan em um QrCode ou código de barras");
                 intentIntegrator.setCameraId(0);
                 intentIntegrator.initiateScan();
@@ -79,8 +101,6 @@ public class Qr extends AppCompatActivity {
         });
 
 
-        dialogProduct(p1);
-
     }
 
 
@@ -93,10 +113,13 @@ public class Qr extends AppCompatActivity {
         if(intentResult != null){
             if (intentResult.getContents() !=  null){
 
-                int pId = Integer.parseInt(intentResult.getContents().toString());
+                Log.i("LOG", intentResult.getContents().toString());
+
+
+                String pId = intentResult.getContents().toString();
 
                 for (Product p: mProducts){
-                    if (p.getId() == pId){
+                    if (p.getId().equals(pId)){
                         dialogProduct(p);
                         break;
                     }
