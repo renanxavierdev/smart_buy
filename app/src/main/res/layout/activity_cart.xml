@@ -14,10 +14,11 @@
         android:layout_height="40dp">
 
         <TextView
+            android:id="@+id/textViewCartTotal"
             android:textSize="8pt"
             android:gravity="center"
             android:textStyle="bold"
-            android:text="TOTAL: R$ 120,00"
+            android:text="TOTAL: R$ 0,00"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

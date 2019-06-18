@@ -28,6 +28,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 if (editTextLoginEmail.getText().toString().equals("smart@buy.com") && editTextLoginPass.getText().toString().equals("123")){
                     startActivity(new Intent(Login.this, MainActivity.class));
+
+                    finish();
                 }else {
                     Toast.makeText(Login.this, "Falha ao realizar login", Toast.LENGTH_SHORT).show();
                 }
@@ -38,6 +40,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Login.this, MainActivity.class));
+
+                finish();
             }
         });
     }

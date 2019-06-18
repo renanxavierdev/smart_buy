@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -22,6 +23,8 @@ public class Cart extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private CartAdapter mCartAdapter;
 
+    private TextView textViewCartTotal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,9 @@ public class Cart extends AppCompatActivity {
 
         Bundle extras;
         extras = getIntent().getExtras();
+
+        textViewCartTotal = findViewById(R.id.textViewCartTotal);
+
 
         TypeToken<List<Product>> token = new TypeToken<List<Product>>() {};
 
@@ -43,6 +49,13 @@ public class Cart extends AppCompatActivity {
 
         mCartAdapter = new CartAdapter(Cart.this, mProducts);
         mRecyclerView.setAdapter(mCartAdapter);
+
+        double total = 0.0;
+        for (Product p: mProducts){
+            total = total + ( p.getQtd() * p.getPrice());
+        }
+
+        textViewCartTotal.setText("TOTAL: R$ "+Double.toString(total));
 
     }
 
